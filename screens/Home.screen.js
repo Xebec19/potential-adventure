@@ -1,15 +1,22 @@
 import * as React from "react";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import styled from "styled-components/native";
+import Search from "../components/Search";
+import Item from "../components/Item";
 
-const Wrapper = styled(View)`
+const Wrapper = styled(ScrollView)`
   flex: 1;
+  overflow: scroll;
 `;
 
 export default function HomeScreen() {
   return (
     <Wrapper>
-      <Text>Home!</Text>
+      <Search />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </Wrapper>
   );
 }
