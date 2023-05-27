@@ -1,13 +1,17 @@
-import * as React from "react";
+import React, { useState } from "react";
 import BottomNav from "./navigation/BottomNav";
-import { LocationContextProvider } from "./helpers/location/location.context";
+import SearchContext from "./store/search-context";
 
 export default function App() {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <>
-      <LocationContextProvider>
+      <SearchContext.Provider
+        value={{ searchText: searchText, setSearch: setSearchText }}
+      >
         <BottomNav />
-      </LocationContextProvider>
+      </SearchContext.Provider>
     </>
   );
 }

@@ -1,29 +1,15 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components/native";
+import SearchInput from "./Search";
 
 const SearchContainer = styled.View`
-  padding: ${(props) => props.theme.space[3]};
+  padding: 8px;
 `;
 
 export const Search = () => {
-  const [searchKeyword, setSearchKeyword] = useState();
-  const LocationContext = useContext(LocationContext);
   return (
     <SearchContainer>
-      <SearchBar
-        placeholder="Search for a location"
-        value={searchKeyword}
-        onSubmitEdting={(text) => {
-          searchKeyword(searchKeyword);
-        }}
-        onChangeText={(text) => {
-          if (!text.length) {
-            return;
-          }
-          console.log(text);
-          setSearchKeyword(text);
-        }}
-      />
+      <SearchInput />
     </SearchContainer>
   );
 };
