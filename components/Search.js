@@ -1,21 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TextInput } from "react-native-paper";
 import styled from "styled-components";
-import SearchContext from "../store/search-context";
+import { LocationContext } from "../services/location/location.context";
 
 const SearchInput = styled(TextInput)`
   margin: 8px;
 `;
 
 export default function SearchTextField() {
-  const ctx = useContext(SearchContext);
+  const { keyword, search } = useContext(LocationContext);
+  const [searchKeyword, setSearchText] = useState(keyword);
+
+  useEffect(() => {
+    search(searchKeyword);
+  }, []);
 
   return (
     <SearchInput
       label="Search"
       mode="outlined"
-      value={ctx.searchText}
-      onChangeText={(text) => ctx.setSearch(text)}
+      onSubmitEditing={() => {
+        search(searchKeyword);
+      }}
+      onChangeText={(text) => {
+        setSearchText(text);
+      }}
     />
   );
 }

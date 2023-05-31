@@ -5,10 +5,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import HomeScreen from "../screens/Home.screen";
 import SettingsScreen from "../screens/Settings.screen";
+import RestaurantsNavigator from "./restaurants.navigator";
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomNav() {
+export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -37,6 +38,7 @@ export default function BottomNav() {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Restaurant" component={RestaurantsNavigator} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
