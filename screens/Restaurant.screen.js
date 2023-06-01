@@ -1,5 +1,11 @@
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import {
+  Pressable,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import styled from "styled-components/native";
 import Item from "../components/Item";
 import { Search } from "../components/search.component";
@@ -9,11 +15,13 @@ const Wrapper = styled(ScrollView)`
   overflow: scroll;
 `;
 
-export default function HomeScreen() {
+export default function RestaurantScreen({ navigation }) {
   return (
     <Wrapper>
       <Search />
-      <Item />
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+        <Item />
+      </TouchableOpacity>
       <Item />
       <Item />
       <Item />
