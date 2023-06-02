@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BottomNav from "./navigation/BottomNav";
 import { LocationContextProvider } from "./services/location/location.context";
 import { RestaurantsContextProvider } from "./services/restaurants/restaurants.context";
 import { Navigation } from "./infrastructure/navigation";

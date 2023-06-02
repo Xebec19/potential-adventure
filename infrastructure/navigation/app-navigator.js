@@ -3,8 +3,6 @@ import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import HomeScreen from "../screens/Home.screen";
-import SettingsScreen from "../screens/Settings.screen";
 import RestaurantsNavigator from "./restaurants.navigator";
 
 const Tab = createBottomTabNavigator();
@@ -37,9 +35,7 @@ export default function AppNavigator() {
           ],
         })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Restaurant" component={RestaurantsNavigator} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

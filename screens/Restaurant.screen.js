@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import Item from "../components/Item";
 import { Search } from "../components/search.component";
@@ -19,7 +13,9 @@ export default function RestaurantScreen({ navigation }) {
   return (
     <Wrapper>
       <Search />
-      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Home", { id: 123 })}
+      >
         <Item />
       </TouchableOpacity>
       <Item />
