@@ -7,19 +7,15 @@ const SearchContainer = styled.View`
   padding: 8px;
 `;
 
-export const Search = ({ isFavouriteToggled, onFavouritesToggled }) => {
+export const Search = () => {
   return (
     <SearchContainer>
       <Searchbar
-        icon={isFavouriteToggled ? "heart" : "heart-outline"}
-        onIconPress={onFavouritesToggled}
         placeholder="Search for a location"
+        icon="map"
         value={searchKeyword}
         onSubmitEditing={() => {
           search(searchKeyword);
-        }}
-        onChangeText={(text) => {
-          setSearchKeyword(text);
         }}
       />
     </SearchContainer>

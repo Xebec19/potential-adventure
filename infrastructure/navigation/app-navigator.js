@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import RestaurantsNavigator from "./restaurants.navigator";
+import { MapScreen } from "../../features/restaurant/screens/map.screen";
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +36,7 @@ export default function AppNavigator() {
         })}
       >
         <Tab.Screen name="Restaurant" component={RestaurantsNavigator} />
+        <Tab.Screen name="Map" component={MapScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
